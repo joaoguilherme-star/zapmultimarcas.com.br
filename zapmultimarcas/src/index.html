@@ -1,48 +1,207 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Venda de Carros</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
+    <title>ZAP Multimarcas</title>
+     <link rel="icon" type="image/png" href="./imges/LOGO ZAP MULTIMARCAS.png">
+    <link rel="stylesheet" href="./css/style.css">s
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> </head>
 <body>
-    <header>
-        <h1>Bem-vindo à Venda de Carros</h1>
-        <nav>
-            <ul>
-                <li><a href="#carros">Carros à Venda</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
+
+    <header class="main-header">
+        <div class="container">
+            <a href="#" class="logo"></a>
+            <img class="logo_img" src="./imges/LOGO ZAP MULTIMARCAS.png">
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Serviços</a></li>
+                    <li><a href="#">Sobre nós</a></li>
+                    <li><a href="#">Compras</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#">Sign Up</a>
+                <button class="btn-contact">Get a Quote</button>
+            </div>
+        </div>
     </header>
 
     <main>
-        <section id="carros">
-            <h2>Carros Disponíveis</h2>
-            <div class="carro">
-                <h3>Modelo do Carro 1</h3>
-                <p>Descrição do carro 1.</p>
-                <p>Preço: R$ XX.XXX,XX</p>
+        <section class="hero">
+            <div class="container">
+                <h1>Encontre seu carro dos sonhos</h1>
+                <form class="search-form">
+                    <select name="make">
+                        <option value="">VolksWagen</option>
+                        <option value="audi">Toyota</option>
+                        <option value="tesla">Tesla</option>
+                    </select>
+                    <select name="model">
+                        <option value="">Model</option>
+                        <option value="q5">Q5</option>
+                        <option value="model-s">Model S</option>
+                    </select>
+                    <select name="year">
+                        <option value="">Year</option>
+                        <option value="2024">2024</option>
+                        <option value="2023">2023</option>
+                    </select>
+                    <button type="submit" class="btn">Search</button>
+                </form>
+                <img src="https://placehold.co/900x400/EFEFEF/FFF?text=Car+Image" alt="White Sedan" class="hero-image">
             </div>
-            <div class="carro">
-                <h3>Modelo do Carro 2</h3>
-                <p>Descrição do carro 2.</p>
-                <p>Preço: R$ XX.XXX,XX</p>
-            </div>
-            <!-- Adicione mais carros conforme necessário -->
         </section>
 
-        <section id="contato">
-            <h2>Contato</h2>
-            <p>Para mais informações, entre em contato conosco pelo e-mail: contato@vendedordecarros.com.br</p>
+        <section class="browse-type">
+            <div class="container">
+                <h2>Encontre Pelo Tipo</h2>
+                <div class="type-grid">
+                    <div class="type-item"><span></span> Sedan</div>
+                    <div class="type-item"><span></span> Coupe</div>
+                    <div class="type-item"><span></span> SUV</div>
+                    <div class="type-item"><span></span> Hatchback</div>
+                    <div class="type-item"><span></span> Sport</div>
+                    <div class="type-item"><span></span> Truck</div>
+                </div>
+            </div>
         </section>
-    </main>
 
-    <footer>
-        <p>&copy; 2023 Venda de Carros. Todos os direitos reservados.</p>
+        <section class="cta-section">
+            <div class="container cta-container">
+                <div class="cta-box cta-look">
+                    <div class="cta-icon">ICONE</div>
+                    <h3>Are You Looking For a Car?</h3>
+                    <p>We can help you find the best car. Check our inventory.</p>
+                    <button class="btn">Search Cars</button>
+                </div>
+                <div class="cta-box cta-sell">
+                    <div class="cta-icon">ICON</div>
+                    <h3>Do You Want to Sell a Car?</h3>
+                    <p>Receive the best price for your car and get paid quickly.</p>
+                    <button class="btn btn-dark">Sell Your Car</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="car-listing">
+            <div class="container">
+                <h2>The Most Searched Cars</h2>
+                <div class="car-grid">
+                    <div class="car-card">
+                        <img src="https://placehold.co/300x200/333/FFF?text=Audi+Q5" alt="Audi Q5">
+                        <div class="car-info">
+                            <h3>Audi Q5</h3>
+                            <div class="car-specs">
+                                <span><i class="fas fa-tachometer-alt"></i> 20k</span>
+                                <span><i class="fas fa-cogs"></i> Auto</span>
+                                <span><i class="fas fa-gas-pump"></i> Petrol</span>
+                            </div>
+                            <div class="car-price">$25,000</div>
+                        </div>
+                    </div>
+                    <div class="car-card">
+                        <img src="https://placehold.co/300x200/333/FFF?text=Kia+Niro" alt="Kia Niro">
+                        <div class="car-info">
+                            <h3>Kia Niro</h3>
+                             <div class="car-specs">
+                                <span><i class="fas fa-tachometer-alt"></i> 35k</span>
+                                <span><i class="fas fa-cogs"></i> Auto</span>
+                                <span><i class="fas fa-gas-pump"></i> Hybrid</span>
+                            </div>
+                            <div class="car-price">$28,000</div>
+                        </div>
+                    </div>
+                    <div class="car-card">
+                        <img src="https://placehold.co/300x200/333/FFF?text=Audi+A-Class" alt="Audi A-Class">
+                        <div class="car-info">
+                           <h3>Audi A-Class</h3>
+                            <div class="car-specs">
+                                <span><i class="fas fa-tachometer-alt"></i> 15k</span>
+                                <span><i class="fas fa-cogs"></i> Auto</span>
+                                <span><i class="fas fa-gas-pump"></i> Petrol</span>
+                            </div>
+                           <div class="car-price">$30,500</div>
+                        </div>
+                    </div>
+                    <div class="car-card">
+                        <img src="https://placehold.co/300x200/333/FFF?text=Ford+Bronco" alt="Ford Bronco">
+                        <div class="car-info">
+                            <h3>Ford Bronco</h3>
+                             <div class="car-specs">
+                                <span><i class="fas fa-tachometer-alt"></i> 5k</span>
+                                <span><i class="fas fa-cogs"></i> Auto</span>
+                                <span><i class="fas fa-gas-pump"></i> Petrol</span>
+                            </div>
+                            <div class="car-price">$38,000</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="why-us">
+            <div class="container">
+                <h2>Why Choose Us?</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">ICON</div>
+                        <h4>Special Financing Offers</h4>
+                        <p>We provide special financing options to fit your budget.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">ICON</div>
+                        <h4>Trusted Car Dealership</h4>
+                        <p>Our customers trust us for our quality and reliability.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">ICON</div>
+                        <h4>Transparent Pricing</h4>
+                        <p>No hidden fees. We believe in fair and clear pricing.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">ICON</div>
+                        <h4>Expert Car Service</h4>
+                        <p>Our team of experts ensures your car is in top condition.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        </main>
+    
+    <footer class="main-footer">
+        <div class="footer-top">
+            <div class="container">
+                <h2>O que é a ZAP Multimarcas ?</h2>
+                <div class="ratings-grid">
+                    <div class="rating-box">
+                        <p>REVIEWS ON</p>
+                        <h4>Carfax</h4>
+                        <div class="stars">★★★★★ 4.9/5.0</div>
+                    </div>
+                    <div class="rating-box">
+                        <p>REVIEWS ON</p>
+                        <h4>Google</h4>
+                        <div class="stars">★★★★★ 4.9/5.0</div>
+                    </div>
+                     <div class="rating-box">
+                        <p>REVIEWS ON</p>
+                        <h4>Pundsay</h4>
+                        <div class="stars">★★★★★ 4.9/5.0</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 ZAP Multimarcas. Todos os direitos reservados.</p>
+        </div>
     </footer>
 
-    <script src="js/main.js"></script>
 </body>
 </html>
