@@ -1,32 +1,17 @@
-# Projeto de Venda de Carros
+# Projeto ZAP 
 
 Este projeto é um site para venda de carros, onde os usuários podem visualizar diferentes modelos disponíveis, filtrar suas buscas e obter detalhes sobre cada veículo.
-
-## Estrutura do Projeto
-
-O projeto possui a seguinte estrutura de diretórios:
-
-```
-site-venda-carros
-├── src
-│   ├── css
-│   │   └── style.css       # Estilos CSS para o site
-│   ├── js
-│   │   └── main.js         # Código JavaScript para funcionalidades interativas
-│   └── index.html          # Página principal do site
-└── README.md               # Documentação do projeto
-```
 
 ## Como Configurar
 
 1. Clone o repositório:
    ```
-   git clone <URL_DO_REPOSITORIO>
+   git clone <https://github.com/joaoguilherme-star/zapmultimarcas.com.br.git>
    ```
 
 2. Navegue até o diretório do projeto:
    ```
-   cd site-venda-carros
+   cd zapmultimarcas.com.br
    ```
 
 3. Abra o arquivo `src/index.html` em um navegador para visualizar o site.
