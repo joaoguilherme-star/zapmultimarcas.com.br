@@ -59,7 +59,6 @@ section {
 /* === HEADER === */
 .main-header {
     background: var(--light-color);
-    padding: 15px 0;
     border-bottom: 1px solid var(--gray-color);
 }
 
@@ -77,7 +76,7 @@ section {
 }
 
 .logo_img {
-    width:200px;
+    width: 180px;
 }
 
 .main-nav ul {
@@ -422,4 +421,45 @@ section {
     .hamburger-menu {
         display: block; /* Mostrar o ícone do menu */
     }
+}
+
+.hero-carousel-container {
+    width: 100%; /* O container ocupa toda a largura disponível */
+    overflow-x: auto; /* Permite a rolagem horizontal */
+    scroll-snap-type: x mandatory; /* Habilita o "snap" no eixo X */
+    cursor: grab; /* Indica que a área é arrastável */
+
+    /* Opcional: Esconde a barra de rolagem */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE e Edge */
+}
+
+.hero-carousel-container::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
+}
+
+.hero-carousel {
+    display: flex; /* Coloca as imagens lado a lado */
+    gap: 20px; /* Adiciona um espaço entre as imagens */
+    padding: 0 20px; /* Adiciona um respiro nas laterais */
+}
+
+.hero-carousel-image {
+    /* === A MUDANÇA PRINCIPAL ESTÁ AQUI === */
+    width: 65%; /* Cada imagem ocupa 65% do container. Altere para ver mais ou menos imagens */
+    /* Ou use um tamanho fixo, ex: width: 400px; */
+    
+    flex-shrink: 0; /* Impede que as imagens encolham */
+    height: 450px; /* Defina uma altura fixa para todas terem o mesmo tamanho */
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+    border-radius: 10px; /* Deixa as bordas arredondadas, um toque de design */
+
+    /* Define o ponto de "snap" (trava) */
+    scroll-snap-align: center; /* Trava a imagem no centro. 'start' também funciona bem. */
+}
+
+.hero-carousel-container.grabbing {
+    cursor: grabbing; /* Mãozinha fechada indicando que está arrastando */
+    cursor: -webkit-grabbing;
+    user-select: none; /* Impede que o texto ou as imagens sejam selecionados durante o arraste */
 }
