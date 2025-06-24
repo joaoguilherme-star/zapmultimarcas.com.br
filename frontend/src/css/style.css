@@ -108,6 +108,58 @@ section {
     cursor: pointer;
 }
 
+/* Altura do contêiner do carrossel (ajusta o espaço total que ele ocupa) */
+.hero-carousel {
+    height: 400px; /* Altere este valor para diminuir ou aumentar a altura do carrossel */
+    /* Você pode adicionar max-width também se quiser limitar a largura do carrossel na tela */
+    max-width: 1200px; /* Exemplo: limite a largura máxima do carrossel */
+    margin: 0 auto; /* Para centralizar o carrossel se tiver max-width */
+}
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%; /* Pode diminuir essa porcentagem se a largura ainda for muito grande */
+    max-width: 700px; /* ALtere este valor para diminuir a largura máxima da imagem no modal */
+    object-fit: contain; /* Faz a imagem se ajustar dentro do espaço sem cortes */
+    height: auto; /* Mantém a proporção */
+    max-height: 80vh; /* ALtere este valor (ex: 60vh) para diminuir a altura máxima da imagem no modal */
+}
+/* Estilo para as imagens dentro dos slides do carrossel */
+.hero-carousel-image {
+    width: 100%; /* Garante que a imagem ocupe a largura total do slide */
+    height: 100%; /* Garante que a imagem ocupe a altura total do slide */
+    object-fit: cover; /* ESSENCIAL: Faz a imagem cobrir o espaço sem distorcer, cortando se necessário */
+    /* Se quiser que a imagem se ajuste totalmente sem cortes, use 'contain' */
+    /* object-fit: contain; */
+}
+
+/* Regra Swiper padrão para centralizar o conteúdo do slide (já deve estar no swiper-bundle.min.css) */
+/* Se estiver escrevendo customizado, pode adicionar: */
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Garante que o slide ocupe a altura do carrossel */
+}
+
+.car-image-container {
+    position: relative;
+    width: 100%;
+    height: 200px; /* ALtere este valor para diminuir ou aumentar a altura da imagem no card */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.car-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Mantém a proporção e cobre o espaço */
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
 /* === HERO SECTION === */
 .hero {
     text-align: center;
@@ -225,6 +277,176 @@ section {
     height: 200px;
     object-fit: cover;
 }
+
+/* Style for the car cards (assuming you already have some) */
+.car-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 20px;
+    width: 300px; /* Adjust as needed */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: relative; /* Needed for absolute positioning of arrows */
+}
+
+.car-image-container {
+    position: relative;
+    width: 100%;
+    height: 200px; /* Adjust as needed */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.car-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    cursor: pointer; /* Indicates it's clickable */
+}
+
+/* Arrow styles */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.arrow.left-arrow {
+    left: 10px;
+}
+
+.arrow.right-arrow {
+    right: 10px;
+}
+
+.arrow:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Car Info (assuming you have this) */
+.car-info {
+    padding: 15px;
+}
+
+.car-info h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.car-specs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    color: #555;
+    font-size: 14px;
+}
+
+.car-specs span {
+    display: flex;
+    align-items: center;
+}
+
+.car-specs i {
+    margin-right: 5px;
+    color: #007bff; /* Example color for icons */
+}
+
+.car-price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #28a745;
+}
+
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 100; /* Sit on top */
+    padding-top: 50px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    object-fit: contain; /* Ensures the image fits within the modal */
+    height: auto;
+    max-height: 80vh; /* Limit height to 80% of viewport height */
+}
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+/* Close button */
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Modal arrows */
+.modal-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 20px;
+    cursor: pointer;
+    z-index: 101; /* Above modal content */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+.modal-arrow.left-arrow {
+    left: 20px;
+}
+
+.modal-arrow.right-arrow {
+    right: 20px;
+}
+
+.modal-arrow:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
 .car-info {
     padding: 20px;
 }
