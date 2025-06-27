@@ -1,5 +1,16 @@
 {
   "dependencies": {
-    "cloudinary": "^2.7.0"
-  }
+    "cloudinary": "^2.7.0",
+    "express": "^5.1.0"
+  },
+  "name": "zapmultimarcas.com.br",
+  "description": "Este projeto é um site para venda de carros, onde os usuários podem visualizar diferentes modelos disponíveis, filtrar suas buscas e obter detalhes sobre cada veículo.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
