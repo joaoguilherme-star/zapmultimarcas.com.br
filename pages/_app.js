@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }) {
       {/* Os links para Font Awesome e Poppins são importados aqui globalmente. */}
       <Head>
         <title>ZAP Multimarcas</title> {/* Título padrão para todas as páginas */}
-        <link rel="icon" type="image/png" href="public/LOGO ZAP MULTIMARCAS.png" /> {/* Favicon */}
+        <link rel="icon" type="image/png" href="https://res.cloudinary.com/duk5infgc/image/upload/v1751050225/LOGO_ZAP_MULTIMARCAS_mep5ef.png" /> {/* Favicon */}
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" /> {/* Adicionado crossOrigin */}
