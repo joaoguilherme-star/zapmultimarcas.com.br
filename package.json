@@ -1,16 +1,24 @@
 {
-  "dependencies": {
-    "cloudinary": "^2.7.0",
-    "express": "^5.1.0"
-  },
   "name": "zapmultimarcas.com.br",
-  "description": "Este projeto é um site para venda de carros, onde os usuários podem visualizar diferentes modelos disponíveis, filtrar suas buscas e obter detalhes sobre cada veículo.",
-  "version": "1.0.0",
-  "main": "index.js",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "next": "15.3.4"
+  },
+  "devDependencies": {
+    "typescript": "^5",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@tailwindcss/postcss": "^4",
+    "tailwindcss": "^4"
+  }
 }

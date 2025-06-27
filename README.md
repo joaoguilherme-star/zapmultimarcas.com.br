@@ -1,33 +1,36 @@
-# Projeto ZAP 
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-Este projeto é um site para venda de carros, onde os usuários podem visualizar diferentes modelos disponíveis, filtrar suas buscas e obter detalhes sobre cada veículo.
+## Getting Started
 
-## Como Configurar
+First, run the development server:
 
-1. Clone o repositório:
-   ```
-   git clone <https://github.com/joaoguilherme-star/zapmultimarcas.com.br.git>
-   ```
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-2. Navegue até o diretório do projeto:
-   ```
-   cd zapmultimarcas.com.br
-   ```
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-3. Abra o arquivo `src/index.html` em um navegador para visualizar o site.
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-## Funcionalidades
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-- Exibição de carros à venda com detalhes como modelo, preço e descrição.
-- Filtros de pesquisa para facilitar a busca por características específicas.
-- Interatividade através de JavaScript para melhorar a experiência do usuário.
+## Learn More
 
-## Tecnologias Utilizadas
+To learn more about Next.js, take a look at the following resources:
 
-- HTML
-- CSS
-- JavaScript
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-## Contribuições
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou pull requests.
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
