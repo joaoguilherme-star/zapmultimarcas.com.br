@@ -103,14 +103,14 @@ const Footer = () => (
 
 // Dados simulados dos carros (para a lista na página inicial)
 const carsData = [
-    { id: 'up-move', name: 'UP! MOVE 1.0 TSI TOTAL FLEX 12V 5P QHX-4I28', mileage: '20k', transmission: 'Auto', fuel: 'Petrol', price: 'R$57.000,00', imageUrl: 'https://res.cloudinary.com/duk5infgc/image/upload/v1750703170/IMG_0090_h8ksmk.jpg' },
-    { id: 'jetta-trendline', name: 'JETTA TRENDLINE 1.4 TSI 16V 4P AUT. PGW-0454', mileage: '35k', transmission: 'Auto', fuel: 'Hybrid', price: 'R$90.000,00', imageUrl: 'https://res.cloudinary.com/duk5infgc/image/upload/v1750793030/IMG_0305_bjuwov.jpg' },
-    { id: 'nivus-highline', name: 'NIVUS HIGHLINE 1.0 200 TSI FLEX AUT. RLC-2E41', mileage: '15k', transmission: 'Auto', fuel: 'Petrol', price: 'R$30.500,00', imageUrl: 'https://res.cloudinary.com/duk5infgc/image/upload/v1750793158/IMG_9823_jsd2te.jpg' },
-    { id: 'l200-triton', name: 'L200 TRITON GLX 3.2 CD TB INT.DIESEL MEC PZO-6C91', mileage: '5k', transmission: 'Auto', fuel: 'Petrol', price: 'R$115.000,00', imageUrl: 'https://res.cloudinary.com/duk5infgc/image/upload/v1750793244/IMG_0374_urjkvm.jpg' },
-    { id: 'cb250-twister', name: 'CB 250 TWISTER/FLEXONE QHV-0I49', mileage: '5k', transmission: 'Auto', fuel: 'Petrol', price: 'R$17.500,00', imageUrl: 'https://res.cloudinary.com/duk5infgc/image/upload/v1750782941/IMG_0367_i14jyb.jpg' },
-    { id: 'fusca-1300', name: 'FUSCA 1.300 IEY-1B30', mileage: '5k', transmission: 'Auto', fuel: 'Petrol', price: 'R$38.000,00', imageUrl: 'https://res.cloudinary.com/duk5infgc/image/upload/v1750793366/IMG_9762_s3melj.jpg' },
-    { id: 'cruze-ltz', name: 'CRUZE LTZ', mileage: '5k', transmission: 'Auto', fuel: 'Petrol', price: 'R$38.000,00', imageUrl: 'https://res.cloudinary.com/duk5infgc/image/upload/v1750793273/IMG_0290_hbzzux.jpg' },
-    { id: 'gol-1000', name: 'GOL 1000', mileage: '5k', transmission: 'Manual', fuel: 'Petrol', price: 'R$38.000,00', imageUrl: 'https://res.cloudinary.com/duk5infgc/image/upload/v1750793434/IMG_0307_wdz5jr.jpg' },
+    { id: 'up-move', name: 'UP! MOVE 1.0 TSI TOTAL FLEX 12V 5P QHX-4I28', mileage: '20k', transmission: 'Auto', fuel: 'Petrol', price: 'R$ x', imageUrl: 'https://res.cloudinary.com/duk5infgc/image/upload/v1750703170/IMG_0090_h8ksmk.jpg' },
+    { id: 'jetta-trendline', name: 'JETTA TRENDLINE 1.4 TSI 16V 4P AUT. PGW-0454', mileage: '35k', transmission: 'Auto', fuel: 'Hybrid', price: 'R$ x', imageUrl: 'https://res.cloudinary.com/duk5infgc/image/upload/v1750793030/IMG_0305_bjuwov.jpg' },
+    { id: 'nivus-highline', name: 'NIVUS HIGHLINE 1.0 200 TSI FLEX AUT. RLC-2E41', mileage: '15k', transmission: 'Auto', fuel: 'Petrol', price: 'R$ x', imageUrl: 'https://res.cloudinary.com/duk5infgc/image/upload/v1750793158/IMG_9823_jsd2te.jpg' },
+    { id: 'l200-triton', name: 'L200 TRITON GLX 3.2 CD TB INT.DIESEL MEC PZO-6C91', mileage: '5k', transmission: 'Auto', fuel: 'Petrol', price: 'R$ x', imageUrl: 'https://res.cloudinary.com/duk5infgc/image/upload/v1750793244/IMG_0374_urjkvm.jpg' },
+    { id: 'cb250-twister', name: 'CB 250 TWISTER/FLEXONE QHV-0I49', mileage: '5k', transmission: 'Auto', fuel: 'Petrol', price: 'R$ x', imageUrl: 'https://res.cloudinary.com/duk5infgc/image/upload/v1750782941/IMG_0367_i14jyb.jpg' },
+    { id: 'fusca-1300', name: 'FUSCA 1.300 IEY-1B30', mileage: '5k', transmission: 'Auto', fuel: 'Petrol', price: 'R$ x', imageUrl: 'https://res.cloudinary.com/duk5infgc/image/upload/v1750793366/IMG_9762_s3melj.jpg' },
+    { id: 'cruze-ltz', name: 'CRUZE LTZ', mileage: '5k', transmission: 'Auto', fuel: 'Petrol', price: 'R$ x', imageUrl: 'https://res.cloudinary.com/duk5infgc/image/upload/v1750793273/IMG_0290_hbzzux.jpg' },
+    { id: 'gol-1000', name: 'GOL 1000', mileage: '5k', transmission: 'Manual', fuel: 'Petrol', price: 'R$ x', imageUrl: 'https://res.cloudinary.com/duk5infgc/image/upload/v1750793434/IMG_0307_wdz5jr.jpg' },
 ];
 
 
