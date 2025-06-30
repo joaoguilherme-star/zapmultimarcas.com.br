@@ -17,7 +17,7 @@ async function authenticateUser(authInstance) {
     }
 
     return new Promise((resolve) => {
-        const unsubscribe = onAuthStateChanged(authInstance, async (user) => {
+        const unsubscribe = onAuthStateChanged(authInstance, (user) => {
             if (user) {
                 console.log("Usuário autenticado:", user.uid);
                 unsubscribe(); // Para de escutar após a autenticação inicial
@@ -26,16 +26,10 @@ async function authenticateUser(authInstance) {
                 console.log("Nenhum usuário autenticado. Tentando autenticação anônima (placeholder)...");
                 // Simplificado: remove a lógica de initialAuthToken global, pois não é padrão.
                 // A autenticação real do administrador deve ser mais robusta.
-                try {
-                    const userCredential = await signInAnonymously(authInstance);
-                    console.log("Autenticado anonimamente (placeholder):", userCredential.user.uid);
-                    resolve(userCredential.user);
-                } catch (error) {
-                    console.error("Erro na autenticação anônima Firebase:", error);
+                // Erro: operação restrita para admin. Recomenda-se usar autenticação adequada.
+                setTimeout(() => {
                     resolve(null);
-                } finally {
-                    unsubscribe(); // Para de escutar mesmo em caso de erro
-                }
+                }, 0);
             }
         });
     });

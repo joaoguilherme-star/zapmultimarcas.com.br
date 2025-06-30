@@ -34,7 +34,7 @@ ul {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 0 1rem;
 }
@@ -160,7 +160,7 @@ ul {
 /* Seção Hero */
 .hero {
     background: url('https://res.cloudinary.com/duk5infgc/image/upload/v1750784406/IMG_0252_jmkknv.jpg') no-repeat center center/cover;
-    color: #fff;
+    color: #a1a1a1;
     text-align: center;
     padding: 4rem 0 2rem;
     position: relative;
@@ -330,6 +330,10 @@ ul {
     display: inline-block; /* Necessário para aplicar width/height e máscara */
     width: 40px; /* Tamanho para o ícone da máscara */
     height: 40px; /* Tamanho para o ícone da máscara */
+}
+.texto{
+    font-size: 500px;
+    color: var(--accent-color);
 }
 /* Ícones específicos para tipos de carro usando mask-image */
 .type-item:nth-child(1) span { /* Sedan */

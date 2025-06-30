@@ -186,26 +186,13 @@ export default function HomePage() {
             <main>
                 <section className="hero">
                     <div className="container">
-                        <h1 style={{ color: 'white' }}>Bem-vindo à ZAP Multimarcas em Curitibanos, SC</h1>
+                        <h1 className="texto" style={{ color: 'white' }}>Bem-vindo à ZAP Multimarcas em Curitibanos</h1>
                         <div className="hero-carousel swiper">
                             <div className="swiper-wrapper">
-                                <div className="swiper-slide">
-                                    <img src="https://res.cloudinary.com/duk5infgc/image/upload/v1750703156/IMG_0081_meikeo.jpg" alt="Carro 1" className="hero-carousel-image" />
-                                </div>
-                                <div className="swiper-slide">
-                                    <img src="https://res.cloudinary.com/duk5infgc/image/upload/v1750793366/IMG_9762_s3melj.jpg" alt="Carro 2" className="hero-carousel-image" />
-                                </div>
-                                <div className="swiper-slide">
-                                    <img src="https://res.cloudinary.com/duk5infgc/image/upload/v1750793273/IMG_0290_hbzzux.jpg" alt="Carro 3" className="hero-carousel-image" />
-                                </div>
-                                <div className="swiper-slide">
-                                    <img src="https://res.cloudinary.com/duk5infgc/image/upload/v1750793030/IMG_0292_dwy4ud.jpg" alt="Carro 4" className="hero-carousel-image" />
-                                </div>
+                               
                             </div>
-                            <div className="swiper-pagination"></div>
-                            <div className="swiper-button-prev"></div>
-                            <div className="swiper-button-next"></div>
                         </div>
+                        
                     </div>
                 </section>
 
