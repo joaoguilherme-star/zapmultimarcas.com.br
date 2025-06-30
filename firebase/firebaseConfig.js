@@ -1,6 +1,7 @@
 // firebase/firebaseConfig.js
 import { initializeApp } from 'firebase/app'; // Função para inicializar o Firebase
 import { getFirestore } from 'firebase/firestore'; // Função para obter o serviço Firestore
+import { getAuth } from 'firebase/auth'; // Importar getAuth
 
 // Sua configuração Firebase (substitua pelos seus próprios valores da Consola Firebase)
 const firebaseConfig = {
@@ -19,5 +20,8 @@ const app = initializeApp(firebaseConfig);
 // Obtém uma instância do Firestore Database
 const db = getFirestore(app);
 
-// Exporta a instância da base de dados para que possa ser usada noutros ficheiros
-export { db };
+// Obtém uma instância do Firebase Auth
+const auth = getAuth(app);
+
+// Exporta as instâncias para que possam ser usadas noutros ficheiros
+export { db, auth };

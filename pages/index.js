@@ -57,14 +57,10 @@ const Header = () => {
                         <li><a href="/">Home</a></li>
                         <li><a href="#">Serviços</a></li>
                         <li><a href="#">Sobre nós</a></li>
-                        <li><a href="#">Compras</a></li>
-                        <li><a href="#">Contacto</a></li>
+                        <li><a href="#">Nossos Carros</a></li>
+                        <li><a href="#">Contato</a></li>
                     </ul>
                 </nav>
-                <div className="header-actions">
-                    <a href="#">Sign Up</a>
-                    <button className="btn-contact">Get a Quote</button>
-                </div>
             </div>
         </header>
     );
@@ -197,7 +193,7 @@ export default function HomePage() {
                                     <img src="https://res.cloudinary.com/duk5infgc/image/upload/v1750703156/IMG_0081_meikeo.jpg" alt="Carro 1" className="hero-carousel-image" />
                                 </div>
                                 <div className="swiper-slide">
-                                    <img src="https://res.cloudinary.com/duk5infgc/image/upload/v1750784413/IMG_0262_kbcqrf.jpg" alt="Carro 2" className="hero-carousel-image" />
+                                    <img src="https://res.cloudinary.com/duk5infgc/image/upload/v1750793366/IMG_9762_s3melj.jpg" alt="Carro 2" className="hero-carousel-image" />
                                 </div>
                                 <div className="swiper-slide">
                                     <img src="https://res.cloudinary.com/duk5infgc/image/upload/v1750793273/IMG_0290_hbzzux.jpg" alt="Carro 3" className="hero-carousel-image" />

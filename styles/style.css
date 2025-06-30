@@ -84,8 +84,36 @@ ul {
 }
 
 .main-header .logo_img {
-    height: 60px; /* Ajuste conforme necessário */
+    height: 90px;
+     /* Ajuste conforme necessário */
     border-radius: var(--border-radius);
+}
+.logo {
+    /* Exemplo: se no desktop ela fica à esquerda */
+    text-align: left;
+}
+
+.logo_img {
+    max-width: 100%; /* Garante que a imagem não transborde */
+    height: auto;    /* Mantém a proporção */
+}
+
+/* --- Media Query para Dispositivos Móveis --- */
+@media (max-width: 768px) {
+    .logo {
+        display: flex; /* Usamos flexbox para centralizar */
+        justify-content: center; /* Centraliza horizontalmente */
+        align-items: center; /* Opcional: Centraliza verticalmente se o container tiver altura */
+        width: 100%; /* Ocupa toda a largura disponível */
+    }
+
+    /* Se você quiser que a imagem em si seja um bloco centralizado sem flexbox no pai: */
+    /*
+    .logo_img {
+        display: block;
+        margin: 0 auto;
+    }
+    */
 }
 
 .main-nav ul {

@@ -3,53 +3,35 @@ import React, { useState, useEffect } from 'react';
 // Removido: import Head from 'next/head'; (next/head não é resolvido neste ambiente)
 // Removido: import Link from 'next/link'; (substituído por <a> para compatibilidade)
 
-// Importações e inicialização do Firebase movidas para este ficheiro para garantir a resolução
-import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, addDoc, getDocs, doc, getDoc, query, where, updateDoc, deleteDoc } from 'firebase/firestore';
-import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from 'firebase/auth';
-
-// As variáveis globais __firebase_config e __initial_auth_token são fornecidas pelo ambiente.
-const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {};
-const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
-
-// Inicializa o Firebase
-let app;
-if (Object.keys(firebaseConfig).length > 0) {
-    app = initializeApp(firebaseConfig);
-} else {
-    console.error("Firebase config not found. Firebase will not be initialized.");
-}
-
-const db = app ? getFirestore(app) : null;
-const auth = app ? getAuth(app) : null;
+// Importações do Firebase
+import { getFirestore, collection, addDoc, getDocs, doc, getDoc, query, where, updateDoc, deleteDoc } from 'firebase/firestore'; // Firestore functions
+import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from 'firebase/auth'; // Auth functions
+import { db, auth as firebaseAuthModule } from '../../firebase/firebaseConfig'; // Import shared Firebase app instance
 
 // Função para autenticar o usuário (anônima ou com token customizado)
-async function authenticateUser() {
-    if (!auth) {
-        console.error("Firebase Auth not initialized.");
+// Usaremos o 'auth' importado de firebaseConfig.js
+async function authenticateUser(authInstance) {
+    if (!authInstance) {
+        console.error("Firebase Auth not available.");
         return null;
     }
 
     return new Promise((resolve) => {
-        const unsubscribe = onAuthStateChanged(auth, async (user) => {
+        const unsubscribe = onAuthStateChanged(authInstance, async (user) => {
             if (user) {
                 console.log("Usuário autenticado:", user.uid);
                 unsubscribe(); // Para de escutar após a autenticação inicial
                 resolve(user);
             } else {
-                console.log("Nenhum usuário autenticado. Tentando autenticação...");
+                console.log("Nenhum usuário autenticado. Tentando autenticação anônima (placeholder)...");
+                // Simplificado: remove a lógica de initialAuthToken global, pois não é padrão.
+                // A autenticação real do administrador deve ser mais robusta.
                 try {
-                    if (initialAuthToken) {
-                        const userCredential = await signInWithCustomToken(auth, initialAuthToken);
-                        console.log("Autenticado com token customizado:", userCredential.user.uid);
-                        resolve(userCredential.user);
-                    } else {
-                        const userCredential = await signInAnonymously(auth);
-                        console.log("Autenticado anonimamente:", userCredential.user.uid);
-                        resolve(userCredential.user);
-                    }
+                    const userCredential = await signInAnonymously(authInstance);
+                    console.log("Autenticado anonimamente (placeholder):", userCredential.user.uid);
+                    resolve(userCredential.user);
                 } catch (error) {
-                    console.error("Erro na autenticação Firebase:", error);
+                    console.error("Erro na autenticação anônima Firebase:", error);
                     resolve(null);
                 } finally {
                     unsubscribe(); // Para de escutar mesmo em caso de erro
@@ -179,15 +161,20 @@ export default function AdminPage() {
     const [user, setUser] = useState(null); // Estado para o usuário autenticado
 
     useEffect(() => {
-        // Autentica o usuário ao carregar a página
-        authenticateUser().then(loggedInUser => {
-            if (loggedInUser) {
-                setUser(loggedInUser);
-                console.log("Admin panel authenticated user:", loggedInUser.uid);
-            } else {
-                setMessage("Erro: Não foi possível autenticar o usuário. Verifique a configuração do Firebase.");
-            }
-        });
+        // Autentica o usuário ao carregar a página, usando a instância de auth importada
+        if (firebaseAuthModule) {
+            authenticateUser(firebaseAuthModule).then(loggedInUser => {
+                if (loggedInUser) {
+                    setUser(loggedInUser);
+                    console.log("Admin panel authenticated user:", loggedInUser.uid);
+                } else {
+                    setMessage("Erro: Não foi possível autenticar o usuário. Verifique a configuração do Firebase e as regras de segurança se estiver usando autenticação anônima.");
+                }
+            });
+        } else {
+            setMessage("Erro: Módulo de autenticação do Firebase não carregado. Verifique firebaseConfig.js.");
+            console.error("Firebase Auth module (firebaseAuthModule) is not available from firebaseConfig.js");
+        }
     }, []);
 
     const handleChange = (e) => {
@@ -245,13 +232,12 @@ export default function AdminPage() {
                 return;
             }
 
-            // Caminho da coleção privada do usuário: /artifacts/{appId}/users/{userId}/cars
-            // O Firestore criará o documento com um ID automático se você usar addDoc.
-            // Se você quiser usar o carData.id como ID do documento, usaria setDoc(doc(db, 'cars', carData.id), parsedData);
-            const carsCollectionRef = collection(db, 'artifacts', user.uid, 'cars');
+            // Caminho da coleção global de carros, conforme decisão do usuário.
+            // Firestore auto-gerará o ID do documento, e carData.id (slug) será um campo dentro do documento.
+            const carsCollectionRef = collection(db, 'cars');
             await addDoc(carsCollectionRef, parsedData);
 
-            setMessage("Carro adicionado com sucesso!");
+            setMessage("Carro adicionado com sucesso à coleção global 'cars'!");
             // Limpa o formulário
             setCarData({
                 id: '', name: '', make: '', model: '', year: '', mileage: '',
