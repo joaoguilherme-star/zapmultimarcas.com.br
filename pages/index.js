@@ -102,20 +102,32 @@ const Footer = () => (
 );
 
 // Dados simulados dos carros (para a lista na página inicial)
+// Adicionando múltiplas imagens para cada carro
 const carsData = [
-    { id: 'up-move', name: 'UP! MOVE 1.0 TSI TOTAL FLEX 12V 5P QHX-4I28', mileage: '20k', transmission: 'Auto', fuel: 'Petrol', price: 'R$ x', imageUrl: 'https://res.cloudinary.com/duk5infgc/image/upload/v1750703170/IMG_0090_h8ksmk.jpg' },
-    { id: 'jetta-trendline', name: 'JETTA TRENDLINE 1.4 TSI 16V 4P AUT. PGW-0454', mileage: '35k', transmission: 'Auto', fuel: 'Hybrid', price: 'R$ x', imageUrl: 'https://res.cloudinary.com/duk5infgc/image/upload/v1750793030/IMG_0305_bjuwov.jpg' },
-    { id: 'nivus-highline', name: 'NIVUS HIGHLINE 1.0 200 TSI FLEX AUT. RLC-2E41', mileage: '15k', transmission: 'Auto', fuel: 'Petrol', price: 'R$ x', imageUrl: 'https://res.cloudinary.com/duk5infgc/image/upload/v1750793158/IMG_9823_jsd2te.jpg' },
-    { id: 'l200-triton', name: 'L200 TRITON GLX 3.2 CD TB INT.DIESEL MEC PZO-6C91', mileage: '5k', transmission: 'Auto', fuel: 'Petrol', price: 'R$ x', imageUrl: 'https://res.cloudinary.com/duk5infgc/image/upload/v1751035422/IMG_0401_wcyshm.jpg' },
-    { id: 'cb250-twister', name: 'CB 250 TWISTER/FLEXONE QHV-0I49', mileage: '5k', transmission: 'Auto', fuel: 'Petrol', price: 'R$ x', imageUrl: 'https://res.cloudinary.com/duk5infgc/image/upload/v1750782941/IMG_0367_i14jyb.jpg' },
-    { id: 'fusca-1300', name: 'FUSCA 1.300 IEY-1B30', mileage: '5k', transmission: 'Auto', fuel: 'Petrol', price: 'R$ x', imageUrl: 'https://res.cloudinary.com/duk5infgc/image/upload/v1750793366/IMG_9762_s3melj.jpg' },
-    { id: 'cruze-ltz', name: 'CRUZE LTZ', mileage: '5k', transmission: 'Auto', fuel: 'Petrol', price: 'R$ x', imageUrl: 'https://res.cloudinary.com/duk5infgc/image/upload/v1750793273/IMG_0290_hbzzux.jpg' },
-    { id: 'gol-1000', name: 'GOL 1000', mileage: '5k', transmission: 'Manual', fuel: 'Petrol', price: 'R$ x', imageUrl: 'https://res.cloudinary.com/duk5infgc/image/upload/v1750793434/IMG_0307_wdz5jr.jpg' },
+    { id: 'up-move', name: 'UP! MOVE 1.0 TSI TOTAL FLEX 12V 5P QHX-4I28', mileage: '20k', transmission: 'Auto', fuel: 'Petrol', price: 'R$ 57.000,00', images: ['https://res.cloudinary.com/duk5infgc/image/upload/v1750703170/IMG_0090_h8ksmk.jpg', 'https://res.cloudinary.com/duk5infgc/image/upload/v1750703171/IMG-20250616-WA0290_kmqtxm.jpg', 'https://res.cloudinary.com/duk5infgc/image/upload/v1750703151/IMG_0105_h1pzzz.jpg'], imageUrl: 'https://res.cloudinary.com/duk5infgc/image/upload/v1750703170/IMG_0090_h8ksmk.jpg' },
+    { id: 'jetta-trendline', name: 'JETTA TRENDLINE 1.4 TSI 16V 4P AUT. PGW-0454', mileage: '35k', transmission: 'Auto', fuel: 'Hybrid', price: 'R$ 90.000,00', images: ['https://res.cloudinary.com/duk5infgc/image/upload/v1750793030/IMG_0305_bjuwov.jpg', 'https://res.cloudinary.com/duk5infgc/image/upload/v1750793030/IMG_0292_dwy4ud.jpg', 'https://res.cloudinary.com/duk5infgc/image/upload/v1750793273/IMG_0290_hbzzux.jpg'], imageUrl: 'https://res.cloudinary.com/duk5infgc/image/upload/v1750793030/IMG_0305_bjuwov.jpg' },
+    { id: 'nivus-highline', name: 'NIVUS HIGHLINE 1.0 200 TSI FLEX AUT. RLC-2E41', mileage: '15k', transmission: 'Auto', fuel: 'Petrol', price: 'R$ 30.500,00', images: ['https://res.cloudinary.com/duk5infgc/image/upload/v1750793158/IMG_9823_jsd2te.jpg', 'https://res.cloudinary.com/duk5infgc/image/upload/v1750793175/IMG_9824_z8j1g1.jpg', 'https://res.cloudinary.com/duk5infgc/image/upload/v1750793170/IMG_9825_g0w1x2.jpg'], imageUrl: 'https://res.cloudinary.com/duk5infgc/image/upload/v1750793158/IMG_9823_jsd2te.jpg' },
+    { id: 'l200-triton', name: 'L200 TRITON GLX 3.2 CD TB INT.DIESEL MEC PZO-6C91', mileage: '5k', transmission: 'Auto', fuel: 'Petrol', price: 'R$ 115.000,00', images: ['https://res.cloudinary.com/duk5infgc/image/upload/v1751035422/IMG_0401_wcyshm.jpg', 'https://res.cloudinary.com/duk5infgc/image/upload/v1750793244/IMG_0375_pizc4q.jpg', 'https://res.cloudinary.com/duk5infgc/image/upload/v1750793244/IMG_0376_j9q5o6.jpg'], imageUrl: 'https://res.cloudinary.com/duk5infgc/image/upload/v1751035422/IMG_0401_wcyshm.jpg' },
+    { id: 'cb250-twister', name: 'CB 250 TWISTER/FLEXONE QHV-0I49', mileage: '5k', transmission: 'Auto', fuel: 'Petrol', price: 'R$ 17.500,00', images: ['https://res.cloudinary.com/duk5infgc/image/upload/v1750782941/IMG_0367_i14jyb.jpg', 'https://res.cloudinary.com/duk5infgc/image/upload/v1750782941/IMG_0368_z2x2z2.jpg', 'https://res.cloudinary.com/duk5infgc/image/upload/v1750782941/IMG_0369_y3y3y3.jpg'], imageUrl: 'https://res.cloudinary.com/duk5infgc/image/upload/v1750782941/IMG_0367_i14jyb.jpg' },
+    { id: 'fusca-1300', name: 'FUSCA 1.300 IEY-1B30', mileage: '5k', transmission: 'Auto', fuel: 'Petrol', price: 'R$ 38.000,00', images: ['https://res.cloudinary.com/duk5infgc/image/upload/v1750793366/IMG_9762_s3melj.jpg', 'https://res.cloudinary.com/duk5infgc/image/upload/v1750793366/IMG_9763_a4s4a4.jpg', 'https://res.cloudinary.com/duk5infgc/image/upload/v1750793366/IMG_9764_s5d5s5.jpg'], imageUrl: 'https://res.cloudinary.com/duk5infgc/image/upload/v1750793366/IMG_9762_s3melj.jpg' },
+    { id: 'cruze-ltz', name: 'CRUZE LTZ', mileage: '5k', transmission: 'Auto', fuel: 'Petrol', price: 'R$ 38.000,00', images: ['https://res.cloudinary.com/duk5infgc/image/upload/v1750793273/IMG_0290_hbzzux.jpg', 'https://res.cloudinary.com/duk5infgc/image/upload/v1750793273/IMG_0291_q6w6q6.jpg', 'https://res.cloudinary.com/duk5infgc/image/upload/v1750793273/IMG_0292_z7x7z7.jpg'], imageUrl: 'https://res.cloudinary.com/duk5infgc/image/upload/v1750793273/IMG_0290_hbzzux.jpg' },
+    { id: 'gol-1000', name: 'GOL 1000', mileage: '5k', transmission: 'Manual', fuel: 'Petrol', price: 'R$ 38.000,00', images: ["https://res.cloudinary.com/duk5infgc/image/upload/v1750793434/IMG_0307_wdz5jr.jpg", "https://res.cloudinary.com/duk5infgc/image/upload/v1750793432/IMG_0306_ydkmv2.jpg", "https://res.cloudinary.com/duk5infgc/image/upload/v1750793430/IMG_0289_oq3vzv.jpg"], imageUrl: 'https://res.cloudinary.com/duk5infgc/image/upload/v1750793434/IMG_0307_wdz5jr.jpg' },
 ];
 
 
 export default function HomePage() {
+    // Estado para controlar o índice da imagem atual para cada carro
+    const [currentImageIndexes, setCurrentImageIndexes] = React.useState({});
+
     useEffect(() => {
+        // Inicializa os índices de imagem para cada carro em 0
+        const initialIndexes = {};
+        carsData.forEach(car => {
+            initialIndexes[car.id] = 0;
+        });
+        setCurrentImageIndexes(initialIndexes);
+
+
         // Adiciona a folha de estilo do Swiper dinamicamente se não estiver já presente
         const swiperCssLink = document.createElement('link');
         swiperCssLink.rel = 'stylesheet';
@@ -236,13 +248,61 @@ export default function HomePage() {
                     <div className="container">
                         <h2>CONFIRA OS NOSSOS CARROS</h2>
                         <div className="car-grid">
-                            {carsData.map(car => (
-                                // Usando <a> tag para navegação
-                                <a key={car.id} href={`/car/${car.id}`} className="car-card">
-                                    <img src={car.imageUrl} alt={car.name} />
-                                    <div className="car-info">
-                                        <h3>{car.name}</h3>
-                                        <div className="car-specs">
+                            {carsData.map(car => {
+                                const currentIndex = currentImageIndexes[car.id] || 0;
+                                const navigateCarImage = (direction, carId, images) => {
+                                    setCurrentImageIndexes(prevIndexes => {
+                                        const newIndex = (prevIndexes[carId] + direction + images.length) % images.length;
+                                        return { ...prevIndexes, [carId]: newIndex };
+                                    });
+                                };
+
+                                return (
+                                    <div key={car.id} className="car-card">
+                                        <div className="car-image-container">
+                                            <a href={`/car/${car.id}`} className="car-image-link">
+                                                <img
+                                                    src={car.images[currentIndex]}
+                                                    alt={car.name}
+                                                    className="car-card-image" // Adicionada uma classe específica se necessário
+                                                />
+                                            </a>
+                                            {car.images.length > 1 && (
+                                                <>
+                                                    <button
+                                                        className="arrow left-arrow car-card-arrow"
+                                                        onClick={(e) => { e.preventDefault(); e.stopPropagation(); navigateCarImage(-1, car.id, car.images); }}
+                                                    >
+                                                        <i className="fas fa-chevron-left"></i>
+                                                    </button>
+                                                    <button
+                                                        className="arrow right-arrow car-card-arrow"
+                                                        onClick={(e) => { e.preventDefault(); e.stopPropagation(); navigateCarImage(1, car.id, car.images); }}
+                                                    >
+                                                        <i className="fas fa-chevron-right"></i>
+                                                    </button>
+                                                </>
+                                            )}
+                                        </div>
+                                        <a href={`/car/${car.id}`} className="car-info-link">
+                                            <div className="car-info">
+                                                <h3>{car.name}</h3>
+                                                <div className="car-specs">
+                                                    <span><i className="fas fa-tachometer-alt"></i> {car.mileage}</span>
+                                                    <span><i className="fas fa-cogs"></i> {car.transmission}</span>
+                                                    <span><i className="fas fa-gas-pump"></i> {car.fuel}</span>
+                                                </div>
+                                                <div className="car-price">{car.price}</div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    </div>
+                </section>
+
+                <section className="why-us">
                                             <span><i className="fas fa-tachometer-alt"></i> {car.mileage}</span>
                                             <span><i className="fas fa-cogs"></i> {car.transmission}</span>
                                             <span><i className="fas fa-gas-pump"></i> {car.fuel}</span>

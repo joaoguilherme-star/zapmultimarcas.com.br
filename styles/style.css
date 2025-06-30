@@ -403,7 +403,15 @@ ul {
     height: 220px; /* Altura fixa para consistência */
     object-fit: cover;
     display: block;
-    border-bottom: 1px solid #eee;
+    /* border-bottom: 1px solid #eee; */ /* Removido para dar espaço ao container de imagem */
+}
+
+.car-info-link {
+    text-decoration: none; /* Garante que o link não tenha sublinhado */
+    color: inherit; /* Herda a cor do texto do pai */
+    display: flex; /* Para ocupar o espaço restante */
+    flex-direction: column; /* Para alinhar o conteúdo do car-info */
+    flex-grow: 1; /* Ocupa o espaço restante no card */
 }
 
 .car-info {
@@ -454,11 +462,25 @@ ul {
     width: 100%;
     height: 220px; /* Mesma altura da imagem direta */
     overflow: hidden;
-    border-bottom: 1px solid #eee;
-    cursor: pointer;
+    /* border-bottom: 1px solid #eee; */ /* Removido para que as setas fiquem sobre a imagem */
+    /* cursor: pointer; */ /* Removido, pois o link <a> cuidará do clique */
 }
 
-.car-image-wrapper {
+.car-image-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.car-card-image { /* Classe específica para a imagem dentro do card */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block; /* Garante que a imagem não tenha espaço extra abaixo */
+}
+
+
+.car-image-wrapper { /* Este seletor não é mais usado diretamente no card, mas pode ser útil para a página de detalhes */
     width: 100%;
     height: 100%;
     display: flex;
@@ -466,32 +488,43 @@ ul {
     align-items: center;
 }
 
-.car-image-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease; /* Transição suave para o zoom */
-}
-
-.car-image-container .arrow {
+/* Ajuste para as setas dos cards da homepage */
+.car-card .car-image-container .arrow {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.4); /* Fundo semi-transparente */
     color: white;
-    padding: 0.5rem 0.75rem;
-    border-radius: 50%;
+    border: none;
+    border-radius: 50%; /* Botões redondos */
+    width: 30px; /* Tamanho fixo */
+    height: 30px; /* Tamanho fixo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
     z-index: 10;
-    font-size: 1.2rem;
-    opacity: 1; /* Definido para 1 para garantir a visibilidade das setas */
+    font-size: 0.9rem; /* Tamanho do ícone da seta */
+    opacity: 0; /* Inicialmente oculto */
     transition: opacity var(--transition-speed) ease, background-color var(--transition-speed) ease;
 }
 
-.car-image-container:hover .arrow {
-    opacity: 1; /* Mantém a opacidade 1 no hover */
-    background-color: rgba(0, 0, 0, 0.7); /* Torna o fundo um pouco mais escuro no hover */
+.car-card .car-image-container:hover .arrow {
+    opacity: 1; /* Aparece no hover do container da imagem */
 }
+
+.car-card .car-image-container .arrow:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* Mais escuro no hover da seta */
+}
+
+.car-card .car-image-container .left-arrow {
+    left: 10px; /* Posição da seta esquerda */
+}
+
+.car-card .car-image-container .right-arrow {
+    right: 10px; /* Posição da seta direita */
+}
+
 
 /* Estilos da página de detalhes do carro */
 .car-detail-main {
