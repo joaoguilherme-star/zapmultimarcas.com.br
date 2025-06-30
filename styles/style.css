@@ -131,7 +131,7 @@ ul {
 
 /* Seção Hero */
 .hero {
-    background: url('https://res.cloudinary.com/duk5infgc/image/upload/v1750793244/IMG_0374_urjkvm.jpg') no-repeat center center/cover;
+    background: url('https://res.cloudinary.com/duk5infgc/image/upload/v1750784406/IMG_0252_jmkknv.jpg') no-repeat center center/cover;
     color: #fff;
     text-align: center;
     padding: 4rem 0 2rem;
@@ -165,54 +165,89 @@ ul {
 /* Carrossel Swiper para Hero */
 .hero-carousel {
     width: 100%;
-    max-width: 900px;
-    height: 450px; /* Altura fixa para consistência */
-    margin: 2rem auto;
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    max-width: 900px; /* Mantido */
+    height: 450px; /* Mantido */
+    margin: 2rem auto; /* Mantido */
+    border-radius: calc(var(--border-radius) * 1.5); /* Aumentar um pouco o raio */
+    overflow: hidden; /* Mantido */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25); /* Sombra um pouco mais pronunciada */
+    position: relative; /* Para posicionamento absoluto dos controles customizados, se necessário */
 }
 
 .hero-carousel-image {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Cobre o contêiner, cortando se necessário */
-    border-radius: var(--border-radius);
+    object-fit: cover;
+    border-radius: calc(var(--border-radius) * 1.5); /* Combinar com o container */
+    transition: transform 0.4s ease-out; /* Para efeito de zoom */
 }
 
 .swiper-slide {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden; /* Para conter o zoom da imagem */
 }
 
+/* Efeito de zoom suave na imagem do slide ativo ao passar o mouse sobre o slide */
+.swiper-slide:hover .hero-carousel-image {
+    transform: scale(1.05);
+}
+
+
+/* Paginação - tornando o ponto ativo um pouco maior e mais destacado */
 .swiper-pagination-bullet {
-    background: #fff !important;
-    opacity: 0.7 !important;
+    background: rgba(255, 255, 255, 0.7); /* Cor branca com opacidade */
+    opacity: 1; /* Controlar opacidade diretamente na cor de fundo */
+    width: 10px; /* Tamanho aumentado */
+    height: 10px; /* Tamanho aumentado */
+    transition: all var(--transition-speed) ease;
+    margin: 0 5px !important; /* Adicionar espaçamento */
 }
 
 .swiper-pagination-bullet-active {
-    background: var(--primary-color) !important;
-    opacity: 1 !important;
+    background: var(--primary-color); /* Cor primária sólida */
+    transform: scale(1.3); /* Um pouco maior quando ativo */
+    border-radius: 5px; /* Mantém redondo mesmo escalado */
 }
 
+/* Botões de Navegação - mais elegantes e integrados */
 .swiper-button-next,
 .swiper-button-prev {
-    color: #fff !important;
-    background-color: rgba(0, 0, 0, 0.3);
-    border-radius: 50%;
-    width: 2.5rem;
-    height: 2.5rem;
+    color: #fff !important; /* Cor do ícone da seta */
+    background-color: rgba(0, 0, 0, 0.25); /* Fundo sutil */
+    border-radius: var(--border-radius); /* Cantos arredondados, mas não totalmente circulares */
+    width: 44px; /* Largura ajustada */
+    height: 44px; /* Altura ajustada */
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background-color var(--transition-speed) ease;
+    transition: background-color var(--transition-speed) ease, transform 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
 }
 
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5); /* Mais escuro no hover */
+    transform: scale(1.05); /* Leve aumento no hover */
 }
+
+/* Ajustar o tamanho dos ícones das setas (se estiver usando os ícones padrão do Swiper) */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    font-size: 1.2rem !important; /* Ajustar tamanho da seta */
+    font-weight: 900; /* Mais 'bold' se a fonte permitir */
+}
+
+/* Posicionamento das setas - um pouco mais para dentro */
+.swiper-button-prev {
+    left: 15px;
+}
+
+.swiper-button-next {
+    right: 15px;
+}
+
 
 /* Seção Encontrar por Tipo */
 .browse-type {
@@ -270,8 +305,8 @@ ul {
 }
 /* Ícones específicos para tipos de carro usando mask-image */
 .type-item:nth-child(1) span { /* Sedan */
-    -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Pro 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2024 Fonticons, Inc. --><path d="M432 320h-48c-17.7 0-32 14.3-32 32s14.3 32 32 32h48c17.7 0 32-14.3 32-32s-14.3-32-32-32zm48 192c44.1 0 80-35.9 80-80s-35.9-80-80-80-80 35.9-80 80 35.9 80 80 80zM352 192c0-17.7-14.3-32-32-32H32c-17.7 0-32 14.3-32 32V384c0 17.7 14.3 32 32 32H64c0 53 43 96 96 96s96-43 96-96h128c0 53 43 96 96 96s96-43 96-96h32c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32H368V192c0-17.7-14.3-32-32-32s-32 14.3-32 32v64h-80V192zM160 448c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm0-256V256H32V192H160zM384 256v-64h-32v64h32z"/></svg>');
-    mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Pro 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2024 Fonticons, Inc. --><path d="M432 320h-48c-17.7 0-32 14.3-32 32s14.3 32 32 32h48c17.7 0 32-14.3 32-32s-14.3-32-32-32zm48 192c44.1 0 80-35.9 80-80s-35.9-80-80-80-80 35.9-80 80 35.9 80 80 80zM352 192c0-17.7-14.3-32-32-32H32c-17.7 0-32 14.3-32 32V384c0 17.7 14.3 32 32 32H64c0 53 43 96 96 96s96-43 96-96h128c0 53 43 96 96 96s96-43 96-96h32c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32H368V192c0-17.7-14.3-32-32-32s-32 14.3-32 32v64h-80V192zM160 448c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm0-256V256H32V192H160zM384 256v-64h-32v64h32z"/></svg>');
+    -webkit-mask-image: url('data:imagehttps://res.cloudinary.com/duk5infgc/image/upload/v1751305931/SEDAN_r472wi.png');
+    mask-image: url('data:image//res.cloudinary.com/duk5infgc/image/upload/v1751305931/SEDAN_r472wi.png');
 }
 .type-item:nth-child(2) span { /* Coupe */
     -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Pro 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2024 Fonticons, Inc. --><path d="M623.5 192c-8.9-8.9-20.9-13.5-33.5-13.5H544V128c0-17.7-14.3-32-32-32H400c-17.7 0-32 14.3-32 32v64H320c-17.7 0-32 14.3-32 32s14.3 32 32 32h16v64c0 17.7 14.3 32 32 32h48c0 53 43 96 96 96s96-43 96-96h16c0 53 43 96 96 96s96-43 96-96h32c17.7 0 32-14.3 32-32V224c0-12.6-4.6-24.6-13.5-33.5zM480 384c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm160-32c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zM368 256V192H512v64H368z"/></svg>');
@@ -403,7 +438,15 @@ ul {
     height: 220px; /* Altura fixa para consistência */
     object-fit: cover;
     display: block;
-    border-bottom: 1px solid #eee;
+    /* border-bottom: 1px solid #eee; */ /* Removido para dar espaço ao container de imagem */
+}
+
+.car-info-link {
+    text-decoration: none; /* Garante que o link não tenha sublinhado */
+    color: inherit; /* Herda a cor do texto do pai */
+    display: flex; /* Para ocupar o espaço restante */
+    flex-direction: column; /* Para alinhar o conteúdo do car-info */
+    flex-grow: 1; /* Ocupa o espaço restante no card */
 }
 
 .car-info {
@@ -454,11 +497,25 @@ ul {
     width: 100%;
     height: 220px; /* Mesma altura da imagem direta */
     overflow: hidden;
-    border-bottom: 1px solid #eee;
-    cursor: pointer;
+    /* border-bottom: 1px solid #eee; */ /* Removido para que as setas fiquem sobre a imagem */
+    /* cursor: pointer; */ /* Removido, pois o link <a> cuidará do clique */
 }
 
-.car-image-wrapper {
+.car-image-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.car-card-image { /* Classe específica para a imagem dentro do card */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block; /* Garante que a imagem não tenha espaço extra abaixo */
+}
+
+
+.car-image-wrapper { /* Este seletor não é mais usado diretamente no card, mas pode ser útil para a página de detalhes */
     width: 100%;
     height: 100%;
     display: flex;
@@ -466,32 +523,43 @@ ul {
     align-items: center;
 }
 
-.car-image-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease; /* Transição suave para o zoom */
-}
-
-.car-image-container .arrow {
+/* Ajuste para as setas dos cards da homepage */
+.car-card .car-image-container .arrow {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.4); /* Fundo semi-transparente */
     color: white;
-    padding: 0.5rem 0.75rem;
-    border-radius: 50%;
+    border: none;
+    border-radius: 50%; /* Botões redondos */
+    width: 30px; /* Tamanho fixo */
+    height: 30px; /* Tamanho fixo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
     z-index: 10;
-    font-size: 1.2rem;
-    opacity: 1; /* Definido para 1 para garantir a visibilidade das setas */
+    font-size: 0.9rem; /* Tamanho do ícone da seta */
+    opacity: 0; /* Inicialmente oculto */
     transition: opacity var(--transition-speed) ease, background-color var(--transition-speed) ease;
 }
 
-.car-image-container:hover .arrow {
-    opacity: 1; /* Mantém a opacidade 1 no hover */
-    background-color: rgba(0, 0, 0, 0.7); /* Torna o fundo um pouco mais escuro no hover */
+.car-card .car-image-container:hover .arrow {
+    opacity: 1; /* Aparece no hover do container da imagem */
 }
+
+.car-card .car-image-container .arrow:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* Mais escuro no hover da seta */
+}
+
+.car-card .car-image-container .left-arrow {
+    left: 10px; /* Posição da seta esquerda */
+}
+
+.car-card .car-image-container .right-arrow {
+    right: 10px; /* Posição da seta direita */
+}
+
 
 /* Estilos da página de detalhes do carro */
 .car-detail-main {
