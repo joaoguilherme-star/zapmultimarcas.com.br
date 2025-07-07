@@ -72,7 +72,7 @@ const Footer = () => (
     <footer className="main-footer">
         <div className="footer-top">
             <div className="container">
-                <h2>O que é a ZAP Multimarcas ?</h2>
+                <h2>O que é a ZAP ?</h2>
                 <div className="ratings-grid">
                     <div className="rating-box">
                         <p>REVIEWS ON</p>
