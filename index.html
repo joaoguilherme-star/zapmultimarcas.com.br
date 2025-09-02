@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZAP Multimarcas - Veículos de Qualidade em Curitibanos</title>
+    <link rel="icon" href="https://res.cloudinary.com/duk5infgc/image/upload/v1756787131/favicon-zap_d4jvdx.png" type="image/png">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -64,12 +65,10 @@
     <nav class="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-zap-green/20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
-                <div class="flex items-center space-x-2">
-                    <div class="w-10 h-10 bg-zap-green rounded-lg flex items-center justify-center">
-                        <span class="text-black font-bold text-xl">Z</span>
-                    </div>
-                    <span class="text-xl font-bold">ZAP Multimarcas</span>
-                </div>
+            <div class="flex items-center space-x-2">
+                <img src="https://res.cloudinary.com/duk5infgc/image/upload/v1751050225/LOGO_ZAP_MULTIMARCAS_mep5ef.png" alt="Logo ZAP" class="w-20 h-30 rounded-full">
+                <span class="text-xl font-bold">ZAP Multimarcas</span>
+            </div>
                 <div class="hidden md:flex space-x-8">
                     <a href="#home" class="hover:text-zap-green transition-colors">Início</a>
                     <a href="#inventory" class="hover:text-zap-green transition-colors">Estoque</a>
@@ -98,13 +97,12 @@
         <div class="absolute inset-0 hero-gradient"></div>
         <div class="relative z-10 text-center max-w-4xl mx-auto px-4">
             <div class="floating mb-8">
+            <a href="https://wa.me//5549988472059" target="_blank">
                 <div class="w-24 h-24 bg-zap-green rounded-full flex items-center justify-center mx-auto mb-6 pulse-green">
-                    <svg class="w-12 h-12 text-black" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"></path>
-                        <path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1V8a1 1 0 00-1-1h-3z"></path>
-                    </svg>
+                    <img src="https://res.cloudinary.com/duk5infgc/image/upload/v1751050225/LOGO_ZAP_MULTIMARCAS_mep5ef.png" alt="Logo ZAP Multimarcas" class="w-20 h-20" style="filter: brightness(0) invert(1) drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.6));">
                 </div>
-            </div>
+            </a>
+             </div>
             <h1 class="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white to-zap-green bg-clip-text text-transparent">
                 ZAP Multimarcas
             </h1>
@@ -487,13 +485,13 @@
         function contactWhatsApp() {
             if (!currentCar) return;
             const message = `Olá! Tenho interesse no ${currentCar.name} ${currentCar.year}. Gostaria de mais informações.`;
-            const whatsappUrl = `https://wa.me/5549999999999?text=${encodeURIComponent(message)}`;
+            const whatsappUrl = `https://wa.me//5549988472059?text=${encodeURIComponent(message)}`;
             window.open(whatsappUrl, '_blank');
         }
 
         function openWhatsApp() {
             const message = "Olá! Gostaria de conhecer os veículos disponíveis na ZAP Multimarcas.";
-            const whatsappUrl = `https://wa.me/5549999999999?text=${encodeURIComponent(message)}`;
+            const whatsappUrl = `https://wa.me//5549988472059?text=${encodeURIComponent(message)}`;
             window.open(whatsappUrl, '_blank');
         }
 
