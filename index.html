@@ -61,6 +61,30 @@
     </style>
 </head>
 <body class="bg-zap-dark text-white overflow-x-hidden">
+
+    <!--BUTÃO DO ZAPZAP-->
+<a href="https://wa.me//5549988472059" target="_blank" 
+   class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:scale-110 transition-transform duration-300 animate-pulse-whatsapp z-50"
+   aria-label="Fale conosco no WhatsApp">
+  <!-- Ícone do WhatsApp (SVG) -->
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" class="w-7 h-7">
+    <path d="M16 .063C7.163.063.063 7.163.063 16c0 2.825.736 5.58 2.144 7.997L0 32l8.27-2.174A15.85 15.85 0 0 0 16 31.938C24.837 31.938 31.938 24.837 31.938 16S24.837.063 16 .063zm0 29.25c-2.616 0-5.17-.697-7.39-2.017l-.53-.315-4.91 1.29 1.31-4.787-.345-.547A13.37 13.37 0 0 1 2.625 16c0-7.39 6.008-13.397 13.375-13.397S29.375 8.61 29.375 16 23.39 29.313 16 29.313zm7.338-9.92c-.403-.2-2.38-1.174-2.75-1.307-.37-.134-.64-.2-.91.2-.268.402-1.043 1.306-1.278 1.574-.234.268-.47.3-.873.1-.402-.2-1.697-.626-3.233-1.994-1.195-1.064-2.003-2.38-2.237-2.782-.234-.402-.025-.62.176-.82.18-.178.402-.47.604-.704.2-.234.268-.402.402-.67.134-.268.067-.5-.033-.704-.1-.2-.91-2.174-1.248-2.98-.327-.79-.662-.68-.91-.692-.234-.01-.503-.012-.773-.012-.268 0-.704.1-1.073.503-.37.402-1.41 1.377-1.41 3.355 0 1.977 1.445 3.885 1.646 4.155.201.268 2.845 4.34 6.89 6.08.963.415 1.715.662 2.3.847.966.308 1.844.264 2.54.16.775-.115 2.38-.97 2.72-1.905.335-.94.335-1.74.234-1.905-.1-.167-.37-.268-.773-.468z"/>
+  </svg>
+</a>
+
+<!-- Estilo da animação pulse -->
+<style>
+  @keyframes pulse-whatsapp {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.6); }
+    70% { transform: scale(1.1); box-shadow: 0 0 0 15px rgba(16, 185, 129, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+  }
+  .animate-pulse-whatsapp {
+    animation: pulse-whatsapp 2s infinite;
+  }
+</style>
+
+
     <!-- Navigation -->
     <nav class="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-zap-green/20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
